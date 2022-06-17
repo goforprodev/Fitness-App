@@ -1,8 +1,17 @@
 import React,{useState,useEffect} from 'react'
 import {Stack,Typography,TextField,Button,Box} from "@mui/material"	
+import { fetchData,exerciseOptions } from '../utils/fetchData'
 
 const SearchExercises = () => {
-  return (
+    const [search, setsearch] = useState("")
+
+    const handleSearch = async () => {
+        if(search){
+            const data = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList',exerciseOptions)
+            console.log(data)
+        }
+    }
+  return ( 
     <Stack
         alignItems="center"
         justifyContent="center"
@@ -22,9 +31,9 @@ const SearchExercises = () => {
         </Typography>
         <Box>
             <TextField 
-                value={""}
+                value={search}
                 placeholder="Search for an exercise"
-                onChange={(e)=>{}}
+                onChange={(e)=> setsearch(e.target.value.toLowerCase())}
                 type="text"
                 height="76px"
                 sx={{
@@ -48,6 +57,7 @@ const SearchExercises = () => {
                     fontSize:{lg:"20px",xs:"14px"},
                     height:"56px",
                 }}
+                onClick={handleSearch}
             >
                 search
             </Button>
