@@ -7,8 +7,13 @@ const SearchExercises = () => {
 
     const handleSearch = async () => {
         if(search){
-            const data = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList',exerciseOptions)
-            console.log(data)
+            const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises',exerciseOptions)
+            const filteredData =  exercisesData.filter((exercise) => 
+                    exercise.name.toLowerCase().includes(search)||
+                    exercise.target.toLowerCase().includes(search)||
+                    exercise.bodyPart.toLowerCase().includes(search)||
+                    exercise.equipment.toLowerCase().includes(search)
+            )
         }
     }
   return ( 
