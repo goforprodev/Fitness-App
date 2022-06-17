@@ -27,7 +27,7 @@ const Navbar = () => {
         direction="row"
         gap={"40px"}
         fontSize="24px"
-        alignItems="flex-end"
+        alignItems="center"
       >
         <Link to={"/"}style={{textDecoration:"none", color:"#3a1212",borderBottom:"3px solid #ff2625"}}>Home</Link>
         <a href='#exercise' style={{textDecoration:"none", color:"#3a1212"}}>Exercise</a>
