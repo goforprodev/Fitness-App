@@ -38,7 +38,7 @@ const Exercises = ({exercises,setexercises,bodyPart}) => {
 
   return (
     <Box
-      id="exercises"
+      id="exercise"
       sx={{
         mt:{lg:"110px"}
       }}
