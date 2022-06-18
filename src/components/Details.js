@@ -44,7 +44,7 @@ const Details = ({exerciseDetail}) => {
                 <Button sx={{borderRadius:"50%",background:"#fff2db",width:"100px",height:"100px"}}>
                   <img src={icon} alt={bodyPart} style={{width:"50px",height:"50px"}}/>
                 </Button>
-                <Typography variant = "h6 " textTransform="capitalize">{name}</Typography>
+                <Typography variant = "h6" textTransform="capitalize">{name}</Typography>
               </Stack>
             ))
           }
